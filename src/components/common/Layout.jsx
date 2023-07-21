@@ -1,27 +1,26 @@
 import React, {useState} from "react";
 import {
-    AppBar, Container,
+    AppBar, Box, Container,
     createTheme,
     CssBaseline,
     FormControlLabel, FormGroup,
     Switch,
     ThemeProvider,
-    Toolbar
+    Toolbar, Typography
 } from "@material-ui/core";
-import MenuTop from "./MenuTop";
+import MenuTop, {LayoutMain} from "./MenuTop";
+import {BrowserRouter as Router} from "react-router-dom";
 
-
-
-
+const drawerWidth = 240;
 export default function Layout() {
     const themeDark = createTheme({
         palette: {
             background: {
-                paper: '#007be0',
+                paper: '#002241',
                 default: '#001e3c'
             },
             text: {
-                primary: '#ffffff'
+                primary: '#fff'
             }
         }
     })
@@ -29,9 +28,9 @@ export default function Layout() {
     const themeLight = createTheme({
         palette: {
             background: {
-                paper: '#84848c',
-                default: '#c8def5'
-            }
+                paper: '#ececec',
+                default: '#d8e8f6'
+            },
         }
     })
     const [labelTheme, setLabelTheme] = useState('Theme sombre')
@@ -41,13 +40,17 @@ export default function Layout() {
     }
 
     return (
-        <ThemeProvider theme={dark === true ? themeDark : themeLight}>
+        <Router>
+            <ThemeProvider theme={dark === true ? themeDark : themeLight}>
             <CssBaseline />
-            <AppBar position="fixed">
+            <AppBar position="fixed"
+                    sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+                    color={"inherit"}
+            >
                 <Container maxWidth="xl">
-                    <Toolbar disableGutters>
+                    <Toolbar>
                         <MenuTop />
-                        <FormGroup sx={{display: {xs:'none', md:'flex'}}}>
+                        <FormGroup>
                             <FormControlLabel
                                 control={<Switch sx={{m:1}} defaultChecked color="secondary"/>}
                                 onChange={handleChange}
@@ -57,9 +60,15 @@ export default function Layout() {
                             />
                         </FormGroup>
                     </Toolbar>
+
                 </Container>
             </AppBar>
-
+            <Box component="main" sx={{ flexGrow: 1, p: 1 }} style={{marginTop: "80px", minHeight:"900px"}}>
+                <Container>
+                    <LayoutMain />
+                </Container>
+            </Box>
         </ThemeProvider>
+        </Router>
     )
 }

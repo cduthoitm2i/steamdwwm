@@ -12,12 +12,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 
 import {Brightness2} from "@material-ui/icons";
 import {Button, createTheme, ThemeProvider} from "@material-ui/core";
 import {TbBrightness2} from "react-icons/tb";
-
 
 
 // Pour ajuster la largeur du menu de gauche
@@ -75,9 +74,8 @@ const themeLight = createTheme({
 })
 
 
-
 export default function OldLayout(props) {
-    const { window } = props;
+    const {window} = props;
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -88,22 +86,22 @@ export default function OldLayout(props) {
 
     const drawer = (
         <div>
-            <div className={classes.toolbar} />
-            <Divider />
+            <div className={classes.toolbar}/>
+            <Divider/>
             <List>
                 {['Home', 'Juste Prix', 'Calculator', 'Morpion', 'Mon jeu', 'Doc'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemText primary={text} />
+                        <ListItemText primary={text}/>
                     </ListItem>
                 ))}
             </List>
-            <Divider />
+            <Divider/>
             <ThemeProvider theme={themeLight}>
-                <CssBaseline />
-                <Brightness2 style={{fontSize:'30px'}}/>
+                <CssBaseline/>
+                <Brightness2 style={{fontSize: '30px'}}/>
 
                 <Button color="primary" variant={"contained"}>Mon super bouton</Button>
-                <TbBrightness2 style={{fontSize:'30px'}}/>
+                <TbBrightness2 style={{fontSize: '30px'}}/>
 
             </ThemeProvider>
         </div>
@@ -113,7 +111,7 @@ export default function OldLayout(props) {
 
     return (
         <div className={classes.root}>
-            <CssBaseline />
+            <CssBaseline/>
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar>
                     <IconButton
@@ -123,7 +121,7 @@ export default function OldLayout(props) {
                         onClick={handleDrawerToggle}
                         className={classes.menuButton}
                     >
-                        <MenuIcon />
+                        <MenuIcon/>
                     </IconButton>
                     <Typography variant="h5" noWrap>
                         Mes jeux
@@ -162,7 +160,7 @@ export default function OldLayout(props) {
                 </Hidden>
             </nav>
             <main className={classes.content}>
-                <div className={classes.toolbar} />
+                <div className={classes.toolbar}/>
 
                 <Typography paragraph>
 

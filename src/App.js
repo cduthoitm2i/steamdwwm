@@ -1,12 +1,9 @@
 import React from "react";
-import './App.css';
-import MenuTop from "./components/commun/MenuTop";
-
+import Layout from "./components/common/Layout";
 
 export default function App() {
-  return (
-    <MenuTop />
-  );
+    return (
+        <Layout/>
+    );
 }
-
 
