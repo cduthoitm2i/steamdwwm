@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 import AdditionLevel, {DataProcess} from "../services/AdditionLevel";
 import {Button, TextField} from "@mui/material";
+import "../../components/styles/calculator.css"
 
 export default function Calculator() {
     const [inputKeyboard, setInputKeybord] = useState(0);
@@ -10,11 +11,14 @@ export default function Calculator() {
     const changeResult = (newResult) => {
         setResultAdd(newResult)
     }
-
+    const textStyle = {
+        color:"red",
+        fontSize:"50px"
+    }
 
     return (
         <div>
-            <h1>Calculator coming soon</h1>
+            <h1 style={textStyle}>Calculator coming soon</h1>
             <AdditionLevel changeResult={changeResult}/><br/>
             <TextField
                 color={"success"}

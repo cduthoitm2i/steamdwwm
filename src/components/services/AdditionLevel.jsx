@@ -64,8 +64,6 @@ export function DataProcess({inputKeyword, resultAdd}) {
     return (
         <>
             {message === "gagné" ? <ApiDogs/> : message}
-
-
         </>
     )
 }
