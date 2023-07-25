@@ -10,6 +10,8 @@ import Calculator from "../pages/Calculator";
 import Morpion from "../pages/Morpion";
 import Mygame from "../pages/Mygame";
 import Documentation from "../pages/Documentation";
+import CoockieClicker from "../pages/CookieClicker";
+import Gif from "../pages/Gif";
 
 
 const itemMenus = [
@@ -18,7 +20,10 @@ const itemMenus = [
     {key: "3", path: "/calculator", label: "Calculator"},
     {key: "4", path: "/morpion", label: "Morpion"},
     {key: "5", path: "/mygame", label: "Mygame"},
-    {key: "6", path: "/documentation", label: "Documentation"}
+    {key: "6", path: "/memory", label:"Memory"},
+    {key: "7", path: "/cookieclicker", label: "CookieClicker"},
+    {key: "8", path: "/gif", label: "Gif"},
+    {key: "9", path: "/documentation", label: "Documentation"}
 ];
 export default function MenuTop() {
 
@@ -63,6 +68,8 @@ export function LayoutMain() {
                     <Route path={"/calculator"} element={<Calculator/>}/>
                     <Route path={"/morpion"} element={<Morpion/>}/>
                     <Route path={"/mygame"} element={<Mygame/>}/>
+                    <Route path={"/cookieclicker"} element={<CoockieClicker/>}/>
+                    <Route path={"/gif"} element={<Gif/>}/>
                     <Route path={"/documentation"} element={<Documentation/>}/>
             </Routes>
         </>

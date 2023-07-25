@@ -23,7 +23,7 @@ export default function Calculator() {
             <TextField
                 color={"success"}
                 variant={"outlined"}
-                defaultValue={" "}
+                placeHolder={"Renseigner une valeur"}
                 onChange={event => setInputKeybord(event.target.value)}
             /><br/>
             <Button onClick={() => {setModeSend(true)}}>Envoyer</Button>
