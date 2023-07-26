@@ -3,8 +3,7 @@ import Cookie from "../common/cookieClicker/Cookie"
 import Score from "../common/cookieClicker/Score"
 import Column from "../common/Column"
 import UpgradeButton from "../common/cookieClicker/UpgradeButton"
-import {Button} from "@mui/material";
-import AutoCookieClickers from "../workers/AutoCookieClickers"
+
 
 export default function CoockieClicker() {
 
