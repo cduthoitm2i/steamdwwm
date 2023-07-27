@@ -10,6 +10,7 @@ import store from "./components/reducer/store";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      // Permet d'appeler une variable store partout
       <Provider store={store}>
           <App/>
       </Provider>,

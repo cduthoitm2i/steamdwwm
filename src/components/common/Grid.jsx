@@ -1,7 +1,8 @@
 export default function Grid({size, components}) {
+    // On définit une constante pour la largeur en fonction de la taille de la fenêtre
     const width = ((80 - 4 - (2 * (size - 1))) / size);
     let i = 0;
-
+    // On définit une constante pour le style
     const gridStyle = {
         paddingLeft: "2vw",
         paddingRight: "2vw",

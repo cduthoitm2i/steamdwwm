@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import ApiDogs from "../Api/ApiDogs";
+import ApiDogs from "../api/ApiDogs";
 
 export default function AdditionLevel({changeResult}) {
     const [firstNum, setFirstNum] = useState(0);
